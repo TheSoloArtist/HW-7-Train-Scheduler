@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Train Scheduler</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body onload="initApp()">
+
+    <div class="container">
+        <div class="row">
+            <header>Let's go somewhere fun today!</header>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h3>Train Schedule</h3>
+        </div>
+        <body>
+            <div class="container">
+                <div class="row sign-in">
+                    <h2 class="logInHeader">Please Sign In</h2>
+                    <div id="firebaseui-auth-container"></div>
+                </div>
+            </div>
+        
+            <script src="assets/javascript/signin.js"></script>
+        
+        </body>
+        <div class="row">
+            <table class="table table-striped" id="schedTable">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <h3>Add Train</h3>
+            <form id="addTrain">
+                <div class="form-group">
+                    <label for="trainName-input">Train Name</label>
+                    <input type="text" class="form-control" id="trainName-input">
+                </div>
+                <div class="form-group">
+                    <label for="dest-input">Destination</label>
+                    <input type="text" class="form-control" id="dest-input">
+                </div>
+                <div class="form-group">
+                    <label for="trainTime-input">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="trainTime-input">
+                </div>
+                <div class="form-group">
+                    <label for="freq-input">Frequency (min)</label>
+                    <input type="text" class="form-control" id="freq-input">
+                </div>
+                <button type="submit" class="btn btn-default" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- MomentJS Reference -->
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js></script>
+
+
+    <!--Firebase Reference  -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+
+    <!--Firebase Authentication  -->
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
+
+    <!--Javascript References  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <script src="assets/javascript/app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.14.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.14.5/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</body>
+
+</html>
